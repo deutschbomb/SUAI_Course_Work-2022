@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Phones_Base
 {
-    public class Mobile : Phone, ICalling, IMessages
+    public class Mobile : Phone, ICalling, IMessages, ISIM_Card
     {
-        public delegate void CallingMessage(object sender, NotificationEventArgs e);
-        public event CallingMessage Notify;
+        public delegate void Notification(object sender, NotificationEventArgs e);
+        public event Notification Notify;
 
         SIM_Card simCard;
         public List<string> Messages;
@@ -83,6 +83,10 @@ namespace Phones_Base
             Messages = this.Messages;
             foreach (string message in Messages) return $"{message}\n";
             return "";
+        }
+        public void Pay_Balance(int balance)
+        {
+            this.Balance += balance;
         }
         #endregion
 

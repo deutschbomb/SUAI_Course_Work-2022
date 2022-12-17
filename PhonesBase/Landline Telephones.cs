@@ -8,8 +8,8 @@ namespace Phones_Base
 {
     public sealed class Landline : Phone, ICalling
     {
-        public delegate void CallingMessage(object sender, NotificationEventArgs e);
-        public event CallingMessage Notify;
+        public delegate void Notification(object sender, NotificationEventArgs e);
+        public event Notification Notify;
 
         public bool Power = true;
         private string number;

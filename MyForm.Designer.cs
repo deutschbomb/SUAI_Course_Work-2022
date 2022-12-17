@@ -44,12 +44,19 @@ namespace ЛабРаб7
             this.AcceptButton = new System.Windows.Forms.Button();
             this.AddedPhoneList = new System.Windows.Forms.ListBox();
             this.Interface = new System.Windows.Forms.GroupBox();
-            this.PhotoMenu = new System.Windows.Forms.GroupBox();
             this.BalanceButton = new System.Windows.Forms.Button();
             this.SystemButton = new System.Windows.Forms.Button();
             this.PhotoButton = new System.Windows.Forms.Button();
             this.MessageButton = new System.Windows.Forms.Button();
             this.CallButton = new System.Windows.Forms.Button();
+            this.simMenu = new System.Windows.Forms.GroupBox();
+            this.simInfo = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.InfoButton = new System.Windows.Forms.Button();
+            this.DepositButton = new System.Windows.Forms.Button();
+            this.DepositType = new System.Windows.Forms.MaskedTextBox();
+            this.PhotoMenu = new System.Windows.Forms.GroupBox();
             this.SystemMenu = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.SystemInfo = new System.Windows.Forms.RichTextBox();
@@ -68,19 +75,12 @@ namespace ЛабРаб7
             this.CreationMenu = new System.Windows.Forms.GroupBox();
             this.ChooseType = new System.Windows.Forms.ComboBox();
             this.CreateButton = new System.Windows.Forms.Button();
-            this.simMenu = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.DepositType = new System.Windows.Forms.MaskedTextBox();
-            this.DepositButton = new System.Windows.Forms.Button();
-            this.InfoButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.Interface.SuspendLayout();
+            this.simMenu.SuspendLayout();
             this.SystemMenu.SuspendLayout();
             this.MessageMenu.SuspendLayout();
             this.CallMenu.SuspendLayout();
             this.CreationMenu.SuspendLayout();
-            this.simMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // NumberShow
@@ -235,15 +235,6 @@ namespace ЛабРаб7
             this.Interface.TabStop = false;
             this.Interface.Text = "Интерфейс";
             // 
-            // PhotoMenu
-            // 
-            this.PhotoMenu.Location = new System.Drawing.Point(205, 19);
-            this.PhotoMenu.Name = "PhotoMenu";
-            this.PhotoMenu.Size = new System.Drawing.Size(232, 416);
-            this.PhotoMenu.TabIndex = 53;
-            this.PhotoMenu.TabStop = false;
-            this.PhotoMenu.Text = "Фотографии";
-            // 
             // BalanceButton
             // 
             this.BalanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -299,6 +290,91 @@ namespace ЛабРаб7
             this.CallButton.UseVisualStyleBackColor = true;
             this.CallButton.Click += new System.EventHandler(this.CallButton_Click);
             // 
+            // simMenu
+            // 
+            this.simMenu.Controls.Add(this.simInfo);
+            this.simMenu.Controls.Add(this.label11);
+            this.simMenu.Controls.Add(this.label10);
+            this.simMenu.Controls.Add(this.InfoButton);
+            this.simMenu.Controls.Add(this.DepositButton);
+            this.simMenu.Controls.Add(this.DepositType);
+            this.simMenu.Location = new System.Drawing.Point(205, 19);
+            this.simMenu.Name = "simMenu";
+            this.simMenu.Size = new System.Drawing.Size(232, 416);
+            this.simMenu.TabIndex = 54;
+            this.simMenu.TabStop = false;
+            this.simMenu.Text = "СИМ-карта";
+            // 
+            // simInfo
+            // 
+            this.simInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.simInfo.Location = new System.Drawing.Point(12, 150);
+            this.simInfo.Name = "simInfo";
+            this.simInfo.ReadOnly = true;
+            this.simInfo.Size = new System.Drawing.Size(201, 260);
+            this.simInfo.TabIndex = 53;
+            this.simInfo.Text = "";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(144, 13);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "Информация о СИМ-карте:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(150, 13);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Введите сумму пополнения:";
+            // 
+            // InfoButton
+            // 
+            this.InfoButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InfoButton.Location = new System.Drawing.Point(113, 71);
+            this.InfoButton.Name = "InfoButton";
+            this.InfoButton.Size = new System.Drawing.Size(92, 45);
+            this.InfoButton.TabIndex = 43;
+            this.InfoButton.Text = "Информация";
+            this.InfoButton.UseVisualStyleBackColor = true;
+            this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
+            // 
+            // DepositButton
+            // 
+            this.DepositButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DepositButton.Location = new System.Drawing.Point(15, 71);
+            this.DepositButton.Name = "DepositButton";
+            this.DepositButton.Size = new System.Drawing.Size(92, 45);
+            this.DepositButton.TabIndex = 43;
+            this.DepositButton.Text = "Пополнить";
+            this.DepositButton.UseVisualStyleBackColor = true;
+            this.DepositButton.Click += new System.EventHandler(this.DepositButton_Click);
+            // 
+            // DepositType
+            // 
+            this.DepositType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
+            this.DepositType.ForeColor = System.Drawing.Color.DimGray;
+            this.DepositType.Location = new System.Drawing.Point(12, 39);
+            this.DepositType.Mask = "000 р.";
+            this.DepositType.Name = "DepositType";
+            this.DepositType.Size = new System.Drawing.Size(201, 20);
+            this.DepositType.TabIndex = 52;
+            this.DepositType.Enter += new System.EventHandler(this.DepositType_Enter);
+            // 
+            // PhotoMenu
+            // 
+            this.PhotoMenu.Location = new System.Drawing.Point(205, 19);
+            this.PhotoMenu.Name = "PhotoMenu";
+            this.PhotoMenu.Size = new System.Drawing.Size(232, 416);
+            this.PhotoMenu.TabIndex = 53;
+            this.PhotoMenu.TabStop = false;
+            this.PhotoMenu.Text = "Фотографии";
+            // 
             // SystemMenu
             // 
             this.SystemMenu.Controls.Add(this.label9);
@@ -321,8 +397,10 @@ namespace ЛабРаб7
             // 
             // SystemInfo
             // 
+            this.SystemInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.SystemInfo.Location = new System.Drawing.Point(7, 40);
             this.SystemInfo.Name = "SystemInfo";
+            this.SystemInfo.ReadOnly = true;
             this.SystemInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.SystemInfo.Size = new System.Drawing.Size(219, 370);
             this.SystemInfo.TabIndex = 0;
@@ -373,8 +451,10 @@ namespace ЛабРаб7
             // 
             // MessagesWindow
             // 
+            this.MessagesWindow.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.MessagesWindow.Location = new System.Drawing.Point(7, 137);
             this.MessagesWindow.Name = "MessagesWindow";
+            this.MessagesWindow.ReadOnly = true;
             this.MessagesWindow.Size = new System.Drawing.Size(219, 273);
             this.MessagesWindow.TabIndex = 0;
             this.MessagesWindow.Text = "";
@@ -496,79 +576,6 @@ namespace ЛабРаб7
             this.CreateButton.UseVisualStyleBackColor = true;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
-            // simMenu
-            // 
-            this.simMenu.Controls.Add(this.richTextBox1);
-            this.simMenu.Controls.Add(this.label11);
-            this.simMenu.Controls.Add(this.label10);
-            this.simMenu.Controls.Add(this.InfoButton);
-            this.simMenu.Controls.Add(this.DepositButton);
-            this.simMenu.Controls.Add(this.DepositType);
-            this.simMenu.Location = new System.Drawing.Point(205, 19);
-            this.simMenu.Name = "simMenu";
-            this.simMenu.Size = new System.Drawing.Size(232, 416);
-            this.simMenu.TabIndex = 54;
-            this.simMenu.TabStop = false;
-            this.simMenu.Text = "СИМ-карта";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(150, 13);
-            this.label10.TabIndex = 51;
-            this.label10.Text = "Введите сумму пополнения:";
-            // 
-            // DepositType
-            // 
-            this.DepositType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.DepositType.ForeColor = System.Drawing.Color.DimGray;
-            this.DepositType.Location = new System.Drawing.Point(12, 39);
-            this.DepositType.Mask = "000 р.";
-            this.DepositType.Name = "DepositType";
-            this.DepositType.Size = new System.Drawing.Size(201, 20);
-            this.DepositType.TabIndex = 52;
-            // 
-            // DepositButton
-            // 
-            this.DepositButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DepositButton.Location = new System.Drawing.Point(15, 71);
-            this.DepositButton.Name = "DepositButton";
-            this.DepositButton.Size = new System.Drawing.Size(92, 45);
-            this.DepositButton.TabIndex = 43;
-            this.DepositButton.Text = "Пополнить";
-            this.DepositButton.UseVisualStyleBackColor = true;
-            this.DepositButton.Click += new System.EventHandler(this.DepositButton_Click);
-            // 
-            // InfoButton
-            // 
-            this.InfoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.InfoButton.Location = new System.Drawing.Point(113, 71);
-            this.InfoButton.Name = "InfoButton";
-            this.InfoButton.Size = new System.Drawing.Size(92, 45);
-            this.InfoButton.TabIndex = 43;
-            this.InfoButton.Text = "Информация";
-            this.InfoButton.UseVisualStyleBackColor = true;
-            this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 150);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(201, 260);
-            this.richTextBox1.TabIndex = 53;
-            this.richTextBox1.Text = "";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 134);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 13);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Информация о СИМ-карте:";
-            // 
             // MyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,6 +597,8 @@ namespace ЛабРаб7
             this.Text = "Создание телефона";
             this.Load += new System.EventHandler(this.MyForm_Load);
             this.Interface.ResumeLayout(false);
+            this.simMenu.ResumeLayout(false);
+            this.simMenu.PerformLayout();
             this.SystemMenu.ResumeLayout(false);
             this.SystemMenu.PerformLayout();
             this.MessageMenu.ResumeLayout(false);
@@ -598,8 +607,6 @@ namespace ЛабРаб7
             this.CallMenu.PerformLayout();
             this.CreationMenu.ResumeLayout(false);
             this.CreationMenu.PerformLayout();
-            this.simMenu.ResumeLayout(false);
-            this.simMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,7 +655,7 @@ namespace ЛабРаб7
         private MaskedTextBox DepositType;
         private Button DepositButton;
         private Button InfoButton;
-        private RichTextBox richTextBox1;
+        private RichTextBox simInfo;
         private Label label11;
     }
 }

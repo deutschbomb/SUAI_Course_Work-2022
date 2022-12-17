@@ -16,9 +16,13 @@ namespace ЛабРаб7
     public partial class MyForm : Form
     {
         Mobile userPhone; int SelectedPhone;
+
         List<Phone> PhonesList = new List<Phone>{ new Landline("Paralitic 404", "331100"),
-        new Mobile("Cockia 1488", 100, "89003221337"), new Landline("Horny", "123456"),
-        new Mobile("Glory H01", 100, "89001137777") };
+            new Mobile("Cockia 1488", 100, "89003221337"), new Landline("Horny", "123456"),
+            new Mobile("Glory H01", 100, "89001137777") };
+
+        List<Mobile> mobilesList = new List<Mobile> { }; List<Landline> landsList = new List<Landline> { };
+
         Random random = new Random();
         GraphicsPath GP = new GraphicsPath();
 
@@ -46,7 +50,7 @@ namespace ЛабРаб7
         }
 
         #region Функции управления
-        public static void DisplayMessage(object sender, NotificationEventArgs e)
+        public static void CallMessage(object sender, NotificationEventArgs e)
         {
             if (e.Number == null)
                 MessageBox.Show($"{e.Message}");
@@ -73,16 +77,6 @@ namespace ЛабРаб7
                 NumberType.Clear();
             }
         }
-        private void MessageType_Enter(object sender, EventArgs e)
-        {
-            if (Message.ForeColor == Color.DimGray)
-            {
-                Message.ForeColor = Color.Black;
-                Message.Font = new Font(Message.Font, FontStyle.Regular);
-                Message.Text = String.Empty;
-                Message.Clear();
-            }
-        }
 
         #region Область создания телефона
         private void userModel_Enter(object sender, EventArgs e)
@@ -90,7 +84,7 @@ namespace ЛабРаб7
             if (userModel.ForeColor == Color.DimGray)
             {
                 userModel.ForeColor = Color.Black;
-                userModel.Font = new Font(ModelType.Font, FontStyle.Regular);
+                userModel.Font = new Font(userModel.Font, FontStyle.Regular);
                 userModel.Text = String.Empty;
                 userModel.Clear();
             }
@@ -100,7 +94,7 @@ namespace ЛабРаб7
             if (userNumber.ForeColor == Color.DimGray)
             {
                 userNumber.ForeColor = Color.Black;
-                userNumber.Font = new Font(NumberType.Font, FontStyle.Regular);
+                userNumber.Font = new Font(userNumber.Font, FontStyle.Regular);
                 userNumber.Text = String.Empty;
                 userNumber.Clear();
             }
@@ -113,6 +107,41 @@ namespace ЛабРаб7
                 userBalance.Font = new Font(userBalance.Font, FontStyle.Regular);
                 userBalance.Clear();
             }
+        }
+        #endregion
+
+        #region Область интерфейса телефона
+        private void MessageType_Enter(object sender, EventArgs e)
+        {
+            if (Message.ForeColor == Color.DimGray)
+            {
+                Message.ForeColor = Color.Black;
+                Message.Font = new Font(Message.Font, FontStyle.Regular);
+                Message.Text = String.Empty;
+                Message.Clear();
+            }
+        }
+        private void DepositType_Enter(object sender, EventArgs e)
+        {
+            if (DepositType.ForeColor == Color.DimGray)
+            {
+                DepositType.ForeColor = Color.Black;
+                DepositType.Font = new Font(DepositType.Font, FontStyle.Regular);
+                DepositType.Clear();
+            }
+        }
+        private void MessageType_Default()
+        {
+            Message.Clear();
+            Message.ForeColor = Color.DimGray;
+            Message.Font = new Font(Message.Font, FontStyle.Italic);
+            Message.Text = "Сообщение...";
+        }
+        private void DepositType_Default()
+        {
+            DepositType.Clear();
+            DepositType.ForeColor = Color.DimGray;
+            DepositType.Font = new Font(DepositType.Font, FontStyle.Italic);
         }
         #endregion
 
@@ -179,29 +208,29 @@ namespace ЛабРаб7
             ModelShow.DataBindings.Clear(); NumberShow.DataBindings.Clear();
             ModelShow.DataBindings.Add("Text", PhonesList, "Model");
             NumberShow.DataBindings.Add("Text", PhonesList, "Number");
-            MessageMenu.Hide(); PhotoMenu.Hide(); SystemMenu.Hide(); 
+            MessageMenu.Hide(); PhotoMenu.Hide(); SystemMenu.Hide(); simMenu.Hide();
             CallMenu.Show();
             this.ClientSize = new System.Drawing.Size(680, 462);
         }
         private void AcceptButton_Click(object sender, EventArgs e)
         {
             AddedPhoneList.Enabled = false;
-            userPhone.Notify += DisplayMessage;
+            userPhone.Notify += CallMessage;
                 Phone OutPhone = PhonesList[AddedPhoneList.SelectedIndex];
                 userPhone.Make_Call(ref OutPhone);
                 PhonesList[AddedPhoneList.SelectedIndex] = OutPhone;
                 DeniedButton.Show();
-            userPhone.Notify -= DisplayMessage;
+            userPhone.Notify -= CallMessage;
         }
         private void DeniedButton_Click(object sender, EventArgs e)
         {
             AddedPhoneList.Enabled = true;
-            userPhone.Notify += DisplayMessage;
+            userPhone.Notify += CallMessage;
                 Phone OutPhone = PhonesList[AddedPhoneList.SelectedIndex];
                 userPhone.End_Call(ref OutPhone);
                 PhonesList[AddedPhoneList.SelectedIndex] = OutPhone;
                 DeniedButton.Hide();
-            userPhone.Notify -= DisplayMessage;
+            userPhone.Notify -= CallMessage;
         }
         #endregion
 
@@ -209,8 +238,9 @@ namespace ЛабРаб7
         private void MessageButton_Click(object sebder, EventArgs e)
         {
             ModelShow.DataBindings.Clear(); NumberShow.DataBindings.Clear();
-            CallMenu.Hide(); PhotoMenu.Hide(); SystemMenu.Hide();
-            MessageMenu.Show();
+            CallMenu.Hide(); PhotoMenu.Hide(); SystemMenu.Hide(); simMenu.Hide();
+            MessageMenu.Show(); MessageType_Default();
+
             this.ClientSize = new System.Drawing.Size(680, 462);
         }
         private void SendButton_Click(object sender, EventArgs e)
@@ -224,7 +254,7 @@ namespace ЛабРаб7
         private void PhotoButton_Click(object sebder, EventArgs e)
         {
             ModelShow.DataBindings.Clear(); NumberShow.DataBindings.Clear();
-            CallMenu.Hide(); MessageMenu.Hide(); SystemMenu.Hide();
+            CallMenu.Hide(); MessageMenu.Hide(); SystemMenu.Hide(); simMenu.Hide();
             PhotoMenu.Show();
 
             this.ClientSize = new System.Drawing.Size(680, 462);
@@ -236,7 +266,7 @@ namespace ЛабРаб7
         private void SystemButton_Click(object sebder, EventArgs e)
         {
             ModelShow.DataBindings.Clear(); NumberShow.DataBindings.Clear();
-            CallMenu.Hide(); MessageMenu.Hide(); PhotoMenu.Hide();
+            CallMenu.Hide(); MessageMenu.Hide(); PhotoMenu.Hide(); simMenu.Hide();
             SystemMenu.Show();
 
             SystemInfo.Text = String.Format($"Модель телефона: {userPhone.Model}\n");
@@ -248,18 +278,22 @@ namespace ЛабРаб7
         #region СИМ-карта
         private void BalanceButton_Click(object sender, EventArgs e)
         {
-            //SystemInfo.Text = String.Format($"Модель телефона: {userPhone.Model}\n" +
-            //                                 $"Номер телефона: {userPhone.Number}\n" +
-            //                                 $"Баланс телефона: {userPhone.Balance} р.");
+            ModelShow.DataBindings.Clear(); NumberShow.DataBindings.Clear();
+            CallMenu.Hide(); MessageMenu.Hide(); PhotoMenu.Hide(); SystemMenu.Hide();
+            simMenu.Show(); DepositType_Default(); simInfo.Text = String.Empty;
+
             this.ClientSize = new System.Drawing.Size(680, 462);
         }
         private void DepositButton_Click(object sender, EventArgs e)
         {
-
+            userPhone.Pay_Balance(Convert.ToInt32(DepositType.Text.Substring(0, 3)));
+            simInfo.Text += String.Format($" Баланс пополнен на сумму: {DepositType.Text.Substring(0, 3)} р.\n" +
+                                        $" Баланс СИМ-карты: {userPhone.Balance} р.\n");
         }
         private void InfoButton_Click(object sender, EventArgs e)
         {
-
+            simInfo.Text = String.Format($" Номер телефона: {userPhone.Number}\n" +
+                                        $" Баланс СИМ-карты: {userPhone.Balance} р.\n");
         }
         #endregion
 

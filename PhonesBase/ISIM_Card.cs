@@ -8,7 +8,7 @@ namespace Phones_Base
 {
     interface ISIM_Card
     {
-        int Pay_Balance(int balance);
+        void Pay_Balance(int balance);
 
     }
 }
