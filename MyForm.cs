@@ -181,6 +181,7 @@ namespace ЛабРаб7
                 this.Controls.Add(this.Введите_номер_телефона_);
                 this.Введите_модель_телефона_.Location = new System.Drawing.Point(12, 9);
                 this.Введите_номер_телефона_.Location = new System.Drawing.Point(12, 57);
+                Console.WriteLine($"{System.IO.Directory.GetCurrentDirectory()}");
             }
         }
         private void AddPhone_Click(object sender, EventArgs e)
@@ -285,7 +286,7 @@ namespace ЛабРаб7
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            openPhoto.InitialDirectory = @"D:\SAVES\Лабораторные работы C#\Курсовая работа 2022\bin\Debug\phone\photos";
+            openPhoto.InitialDirectory = $@"{System.IO.Directory.GetCurrentDirectory()}\phone\photos";
             if (openPhoto.ShowDialog() != DialogResult.Cancel)
             {
                 pictureBox2.Image = new Bitmap(openPhoto.FileName);
@@ -293,7 +294,7 @@ namespace ЛабРаб7
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            openPhoto.InitialDirectory = @"D:\SAVES\Лабораторные работы C#\Курсовая работа 2022\bin\Debug\phone\photos";
+            openPhoto.InitialDirectory = $@"{System.IO.Directory.GetCurrentDirectory()}\phone\photos";
             if (openPhoto.ShowDialog() != DialogResult.Cancel)
             {
                 pictureBox3.Image = new Bitmap(openPhoto.FileName);
@@ -311,7 +312,7 @@ namespace ЛабРаб7
             SystemMenu.Show();
 
             SystemInfo.Text = String.Format($" Модель телефона: {userPhone.Model}\n" +
-                $" Вместимость фотографий: {Directory.EnumerateFiles(@"D:\SAVES\Лабораторные работы C#\Курсовая работа 2022\bin\Debug\phone\photos").Count()}\n" +
+                $" Вместимость фотографий: {Directory.EnumerateFiles($@"{System.IO.Directory.GetCurrentDirectory()}\phone\photos").Count()}\n" +
                 $" ");
         }
 

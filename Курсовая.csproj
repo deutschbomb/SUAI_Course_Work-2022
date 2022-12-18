@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{595E6EE1-AF74-489D-AEFE-54BD8DD76936}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ЛабРаб7</RootNamespace>
-    <AssemblyName>ЛабРаб7</AssemblyName>
+    <RootNamespace>Телефон</RootNamespace>
+    <AssemblyName>Телефон</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -92,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\phone\denied.png" />
+    <Content Include="icon.ico" />
     <None Include="bin\Debug\phone\photos\Tulips.jpg" />
     <None Include="bin\Debug\phone\photos\Penguins.jpg" />
     <None Include="bin\Debug\phone\photos\Hydrangeas.jpg" />

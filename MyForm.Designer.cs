@@ -332,7 +332,7 @@ namespace ЛабРаб7
             this.DeniedButton.BackColor = System.Drawing.Color.Transparent;
             this.DeniedButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeniedButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeniedButton.Image = global::ЛабРаб7.Properties.Resources.denied;
+            this.DeniedButton.Image = global::Телефон.Properties.Resources.denied;
             this.DeniedButton.Location = new System.Drawing.Point(123, 137);
             this.DeniedButton.Name = "DeniedButton";
             this.DeniedButton.Size = new System.Drawing.Size(80, 80);
@@ -345,7 +345,7 @@ namespace ЛабРаб7
             this.AcceptButton.BackColor = System.Drawing.Color.Transparent;
             this.AcceptButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.AcceptButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AcceptButton.Image = global::ЛабРаб7.Properties.Resources.accept;
+            this.AcceptButton.Image = global::Телефон.Properties.Resources.accept;
             this.AcceptButton.Location = new System.Drawing.Point(27, 137);
             this.AcceptButton.Name = "AcceptButton";
             this.AcceptButton.Size = new System.Drawing.Size(80, 80);
@@ -449,7 +449,7 @@ namespace ЛабРаб7
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::ЛабРаб7.Properties.Resources.Tulips;
+            this.pictureBox3.Image = global::Телефон.Properties.Resources.Tulips;
             this.pictureBox3.Location = new System.Drawing.Point(18, 283);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(198, 118);
@@ -463,7 +463,7 @@ namespace ЛабРаб7
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::ЛабРаб7.Properties.Resources.Penguins;
+            this.pictureBox2.Image = global::Телефон.Properties.Resources.Penguins;
             this.pictureBox2.Location = new System.Drawing.Point(18, 156);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(198, 118);
@@ -477,7 +477,7 @@ namespace ЛабРаб7
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ЛабРаб7.Properties.Resources.Hydrangeas;
+            this.pictureBox1.Image = global::Телефон.Properties.Resources.Hydrangeas;
             this.pictureBox1.Location = new System.Drawing.Point(18, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(198, 118);
