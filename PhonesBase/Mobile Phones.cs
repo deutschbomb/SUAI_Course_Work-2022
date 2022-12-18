@@ -8,11 +8,13 @@ namespace Phones_Base
 {
     public class Mobile : Phone, ICalling, IMessages
     {
-        public delegate void Notification(object sender, NotificationEventArgs e);
-        public event Notification Notify;
+        public delegate void Notification(object sender, NotificationEventArgs e); // объявление делегата
+        public event Notification Notify; // объявление события
 
+        #region Поля
         SIM_Card simCard;
         public List<string> Messages = new List<string> { };
+        #endregion
 
         #region Свойства
         public int Balance
@@ -29,6 +31,7 @@ namespace Phones_Base
         #endregion
 
         #region Методы
+        // Реализация метода Make_Call
         public bool Make_Call(ref Phone phone)
         {
             if (this.Balance <= 0)
@@ -59,6 +62,7 @@ namespace Phones_Base
             }
             return false;
         }
+        // Реализация метода End_Call
         public bool End_Call(ref Phone phone)
         {
             if (this.Call == true && phone.Call == true)
@@ -73,6 +77,7 @@ namespace Phones_Base
                 return false;
             }
         }
+        // Реализация метода Send_Message
         public bool Send_Message(ref Phone phone_, string message)
         {
             if (this.Balance <= 0)
@@ -93,6 +98,7 @@ namespace Phones_Base
             }
             return false;
         }
+        // Реализация метода Check_Message
         public string Check_Message(List<string> Messages)
         {
             Messages = this.Messages;
@@ -100,7 +106,7 @@ namespace Phones_Base
             return "";
         }
         #endregion
-
+        // Переопределённый стандартный метод ToString()
         public override string ToString()
         {
             if (String.IsNullOrEmpty(this.Number))
@@ -111,7 +117,7 @@ namespace Phones_Base
             else
                 return base.ToString();
         }
-
+        // Конструкторы
         public Mobile() : base() { }
         public Mobile(string Model, int Balance, string Number) : base(Model)
         {
