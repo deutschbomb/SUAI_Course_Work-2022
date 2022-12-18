@@ -16,7 +16,7 @@ namespace Phones_Base
             get => model;
             set
             {
-                if (String.IsNullOrEmpty(value)) model = "Модель указана неверно!";
+                if (String.IsNullOrEmpty(value)) model = String.Empty;
                 else model = value;
             }
         }

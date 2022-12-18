@@ -8,7 +8,7 @@ namespace Phones_Base
 {
     interface ICalling
     {
-        void Make_Call(ref Phone Phone);
-        void End_Call(ref Phone phone);
+        bool Make_Call(ref Phone Phone);
+        bool End_Call(ref Phone phone);
     }
 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Phones_Base
 {
-    public class Mobile : Phone, ICalling, IMessages, ISIM_Card
+    public class Mobile : Phone, ICalling, IMessages
     {
         public delegate void Notification(object sender, NotificationEventArgs e);
         public event Notification Notify;
 
         SIM_Card simCard;
-        public List<string> Messages;
+        public List<string> Messages = new List<string> { };
 
         #region Свойства
         public int Balance
@@ -29,7 +29,7 @@ namespace Phones_Base
         #endregion
 
         #region Методы
-        public void Make_Call(ref Phone phone)
+        public bool Make_Call(ref Phone phone)
         {
             if (this.Balance <= 0)
                 Notify?.Invoke(this, new NotificationEventArgs("Недостаточно средств для совершения звонка.\n" +
@@ -50,32 +50,45 @@ namespace Phones_Base
                         else
                         {
                             this.Call = phone.Call = true;
+                            this.Balance -= 10;
                             Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Набор номера..."));
+                            return true;
                         }
                     }               
                 }
-            }            
-        }
-        public void End_Call(ref Phone phone)
-        {
-            if (this.Call == true)
-            {
-                phone.Call = false;
-                Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Вызов завершён."));
             }
-            else Notify?.Invoke(this, new NotificationEventArgs("Входящего вызова нет."));
-
-            this.Call = false;
+            return false;
         }
-        public void Send_Message(ref Mobile phone, string message)
+        public bool End_Call(ref Phone phone)
+        {
+            if (this.Call == true && phone.Call == true)
+            {
+                this.Call = phone.Call = false;
+                Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Вызов завершён."));
+                return true;
+            }
+            else
+            {
+                Notify?.Invoke(this, new NotificationEventArgs("Текущий вызоов совершён не данному абоненту."));
+                return false;
+            }
+        }
+        public void Send_Message(ref Phone phone_, string message)
         {
             if (this.Balance <= 0)
                 Notify?.Invoke(this, new NotificationEventArgs("Недостаточно средств для отправки сообщения.\n" +
                     "Пополните ваш баланс."));
             else
             {
-                phone.Messages.Add($"{this.Number}\n{message}");
-                Notify?.Invoke(this, new NotificationEventArgs("Сообщение отправлено."));
+                if (phone_ is Mobile)
+                {
+                    Mobile phone = (Mobile)phone_;
+                    phone.Messages.Add($" {this.Number}:\n  {message}");
+                    this.Balance -= 5;
+                    Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Сообщение успешно отправлено."));
+                }
+                else Notify?.Invoke(this, new NotificationEventArgs(phone_.ToString(),
+                    "На данный номер невозможно отправить сообщение."));
             }
         }
         public string Check_Message(List<string> Messages)
@@ -83,10 +96,6 @@ namespace Phones_Base
             Messages = this.Messages;
             foreach (string message in Messages) return $"{message}\n";
             return "";
-        }
-        public void Pay_Balance(int balance)
-        {
-            this.Balance += balance;
         }
         #endregion
 

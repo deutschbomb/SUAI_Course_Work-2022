@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMessages.cs" />
-    <Compile Include="ISIM_Card.cs" />
     <Compile Include="NotificationEventArgs.cs" />
     <Compile Include="ICalling.cs" />
     <Compile Include="Landline Telephones.cs" />

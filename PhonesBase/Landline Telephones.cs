@@ -27,7 +27,7 @@ namespace Phones_Base
         #endregion
 
         #region Методы
-        public void Make_Call (ref Phone phone)
+        public bool Make_Call (ref Phone phone)
         {
             if (this.Call == true)
                 Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Текущий вызов не завершён."));
@@ -44,20 +44,25 @@ namespace Phones_Base
                     {
                         this.Call = phone.Call = true;
                         Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Набор номера..."));
+                        return true;
                     }
                 }
             }
+            return false;
         }
-        public void End_Call (ref Phone phone)
+        public bool End_Call (ref Phone phone)
         {
-            if (this.Call == true)
+            if (this.Call == true && phone.Call == true)
             {
-                phone.Call = false;
+                this.Call = phone.Call = false;
                 Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Вызов завершён."));
+                return true;
             }
-            else Notify?.Invoke(this, new NotificationEventArgs("Входящего вызова нет."));
-
-            this.Call = false;
+            else
+            {
+                Notify?.Invoke(this, new NotificationEventArgs("Текущий вызоов совершён не данному абоненту."));
+                return false;
+            }
         }
         #endregion
 
