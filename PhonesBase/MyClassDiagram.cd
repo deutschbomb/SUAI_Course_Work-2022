@@ -3,7 +3,7 @@
   <Class Name="Phones_Base.Phone">
     <Position X="6.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAEAAAEAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAAIAAA=</HashCode>
       <FileName>Phone.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -13,14 +13,14 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Delegate Name="Phones_Base.Landline.CallingMessage">
+      <Delegate Name="Phones_Base.Landline.Notification" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Landline Telephones.cs</NewMemberFileName>
         </TypeIdentifier>
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQACEAEAAAIAAAAAAAABBAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQACEAEAAAIAAAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Landline Telephones.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -31,7 +31,7 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Delegate Name="Phones_Base.Mobile.CallingMessage">
+      <Delegate Name="Phones_Base.Mobile.Notification" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Mobile Phones.cs</NewMemberFileName>
         </TypeIdentifier>

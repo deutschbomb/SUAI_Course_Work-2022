@@ -313,6 +313,7 @@ namespace ЛабРаб7
 
             SystemInfo.Text = String.Format($" Модель телефона: {userPhone.Model}\n" +
                 $" Вместимость фотографий: {Directory.EnumerateFiles($@"{System.IO.Directory.GetCurrentDirectory()}\phone\photos").Count()}\n" +
+                $" Версия: 1.0\n" +
                 $" ");
         }
 
