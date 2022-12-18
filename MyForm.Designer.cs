@@ -77,6 +77,7 @@ namespace ЛабРаб7
             this.CreationMenu = new System.Windows.Forms.GroupBox();
             this.ChooseType = new System.Windows.Forms.ComboBox();
             this.CreateButton = new System.Windows.Forms.Button();
+            this.ContactsArea = new System.Windows.Forms.GroupBox();
             this.Interface.SuspendLayout();
             this.PhotoMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -87,6 +88,7 @@ namespace ЛабРаб7
             this.CallMenu.SuspendLayout();
             this.simMenu.SuspendLayout();
             this.CreationMenu.SuspendLayout();
+            this.ContactsArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // NumberShow
@@ -106,7 +108,7 @@ namespace ЛабРаб7
             this.AddPhone.Location = new System.Drawing.Point(27, 114);
             this.AddPhone.Name = "AddPhone";
             this.AddPhone.Size = new System.Drawing.Size(178, 44);
-            this.AddPhone.TabIndex = 43;
+            this.AddPhone.TabIndex = 8;
             this.AddPhone.Text = "Добавить";
             this.AddPhone.UseVisualStyleBackColor = false;
             this.AddPhone.Click += new System.EventHandler(this.AddPhone_Click);
@@ -155,7 +157,7 @@ namespace ЛабРаб7
             this.ModelType.Location = new System.Drawing.Point(12, 26);
             this.ModelType.Name = "ModelType";
             this.ModelType.Size = new System.Drawing.Size(201, 20);
-            this.ModelType.TabIndex = 40;
+            this.ModelType.TabIndex = 6;
             this.ModelType.Text = "iPhonk 69 или Pasasonic";
             this.ModelType.Enter += new System.EventHandler(this.ModelType_Enter);
             // 
@@ -167,7 +169,7 @@ namespace ЛабРаб7
             this.NumberType.Location = new System.Drawing.Point(12, 73);
             this.NumberType.Name = "NumberType";
             this.NumberType.Size = new System.Drawing.Size(201, 20);
-            this.NumberType.TabIndex = 42;
+            this.NumberType.TabIndex = 7;
             this.NumberType.Text = "12-34-56 или 8(800)555-35-35";
             this.NumberType.Enter += new System.EventHandler(this.NumberType_Enter);
             // 
@@ -205,7 +207,7 @@ namespace ЛабРаб7
             this.simButton.Location = new System.Drawing.Point(15, 375);
             this.simButton.Name = "simButton";
             this.simButton.Size = new System.Drawing.Size(175, 45);
-            this.simButton.TabIndex = 43;
+            this.simButton.TabIndex = 13;
             this.simButton.Text = "О СИМ-карте:";
             this.simButton.UseVisualStyleBackColor = false;
             this.simButton.Click += new System.EventHandler(this.BalanceButton_Click);
@@ -217,7 +219,7 @@ namespace ЛабРаб7
             this.SystemButton.Location = new System.Drawing.Point(15, 194);
             this.SystemButton.Name = "SystemButton";
             this.SystemButton.Size = new System.Drawing.Size(175, 45);
-            this.SystemButton.TabIndex = 43;
+            this.SystemButton.TabIndex = 12;
             this.SystemButton.Text = "Система";
             this.SystemButton.UseVisualStyleBackColor = false;
             this.SystemButton.Click += new System.EventHandler(this.SystemButton_Click);
@@ -229,7 +231,7 @@ namespace ЛабРаб7
             this.PhotoButton.Location = new System.Drawing.Point(15, 140);
             this.PhotoButton.Name = "PhotoButton";
             this.PhotoButton.Size = new System.Drawing.Size(175, 45);
-            this.PhotoButton.TabIndex = 43;
+            this.PhotoButton.TabIndex = 11;
             this.PhotoButton.Text = "Фотографии";
             this.PhotoButton.UseVisualStyleBackColor = false;
             this.PhotoButton.Click += new System.EventHandler(this.PhotoButton_Click);
@@ -241,7 +243,7 @@ namespace ЛабРаб7
             this.MessageButton.Location = new System.Drawing.Point(15, 86);
             this.MessageButton.Name = "MessageButton";
             this.MessageButton.Size = new System.Drawing.Size(175, 45);
-            this.MessageButton.TabIndex = 43;
+            this.MessageButton.TabIndex = 10;
             this.MessageButton.Text = "Сообщение";
             this.MessageButton.UseVisualStyleBackColor = false;
             this.MessageButton.Click += new System.EventHandler(this.MessageButton_Click);
@@ -253,7 +255,7 @@ namespace ЛабРаб7
             this.CallButton.Location = new System.Drawing.Point(15, 32);
             this.CallButton.Name = "CallButton";
             this.CallButton.Size = new System.Drawing.Size(175, 45);
-            this.CallButton.TabIndex = 43;
+            this.CallButton.TabIndex = 9;
             this.CallButton.Text = "Звонок";
             this.CallButton.UseVisualStyleBackColor = false;
             this.CallButton.Click += new System.EventHandler(this.CallButton_Click);
@@ -525,7 +527,7 @@ namespace ЛабРаб7
             this.userBalance.Mask = "000 р.";
             this.userBalance.Name = "userBalance";
             this.userBalance.Size = new System.Drawing.Size(201, 20);
-            this.userBalance.TabIndex = 49;
+            this.userBalance.TabIndex = 4;
             this.userBalance.Enter += new System.EventHandler(this.userBalance_Enter);
             // 
             // userNumber
@@ -536,17 +538,17 @@ namespace ЛабРаб7
             this.userNumber.Location = new System.Drawing.Point(9, 131);
             this.userNumber.Name = "userNumber";
             this.userNumber.Size = new System.Drawing.Size(201, 20);
-            this.userNumber.TabIndex = 47;
+            this.userNumber.TabIndex = 3;
             this.userNumber.Text = "Например: 88005553535";
             this.userNumber.Enter += new System.EventHandler(this.userNumber_Enter);
             // 
             // Введите_модель_телефона_
             // 
             this.Введите_модель_телефона_.AutoSize = true;
-            this.Введите_модель_телефона_.Location = new System.Drawing.Point(9, 67);
+            this.Введите_модель_телефона_.Location = new System.Drawing.Point(9, 68);
             this.Введите_модель_телефона_.Name = "Введите_модель_телефона_";
             this.Введите_модель_телефона_.Size = new System.Drawing.Size(145, 13);
-            this.Введите_модель_телефона_.TabIndex = 46;
+            this.Введите_модель_телефона_.TabIndex = 1;
             this.Введите_модель_телефона_.Text = "Введите модель телефона:";
             // 
             // Введите_баланс_телефона_
@@ -574,34 +576,34 @@ namespace ЛабРаб7
             this.userModel.Location = new System.Drawing.Point(9, 84);
             this.userModel.Name = "userModel";
             this.userModel.Size = new System.Drawing.Size(201, 20);
-            this.userModel.TabIndex = 45;
+            this.userModel.TabIndex = 2;
             this.userModel.Text = "Например: Nokia 3310";
             this.userModel.Enter += new System.EventHandler(this.userModel_Enter);
             // 
             // CreationMenu
             // 
             this.CreationMenu.BackColor = System.Drawing.SystemColors.Control;
+            this.CreationMenu.Controls.Add(this.Введите_номер_телефона_);
+            this.CreationMenu.Controls.Add(this.Введите_модель_телефона_);
             this.CreationMenu.Controls.Add(this.ChooseType);
             this.CreationMenu.Controls.Add(this.userModel);
-            this.CreationMenu.Controls.Add(this.Введите_номер_телефона_);
             this.CreationMenu.Controls.Add(this.Введите_баланс_телефона_);
-            this.CreationMenu.Controls.Add(this.Введите_модель_телефона_);
             this.CreationMenu.Controls.Add(this.CreateButton);
             this.CreationMenu.Controls.Add(this.userNumber);
             this.CreationMenu.Controls.Add(this.userBalance);
             this.CreationMenu.Location = new System.Drawing.Point(12, 9);
             this.CreationMenu.Name = "CreationMenu";
             this.CreationMenu.Size = new System.Drawing.Size(225, 441);
-            this.CreationMenu.TabIndex = 53;
-            this.CreationMenu.TabStop = false;
+            this.CreationMenu.TabIndex = 1;
             this.CreationMenu.Text = "Создание телефона";
             // 
             // ChooseType
             // 
-            this.ChooseType.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ChooseType.BackColor = System.Drawing.SystemColors.Control;
             this.ChooseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ChooseType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ChooseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ChooseType.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ChooseType.FormattingEnabled = true;
             this.ChooseType.Items.AddRange(new object[] {
             "Стационарный",
@@ -609,7 +611,7 @@ namespace ЛабРаб7
             this.ChooseType.Location = new System.Drawing.Point(9, 29);
             this.ChooseType.Name = "ChooseType";
             this.ChooseType.Size = new System.Drawing.Size(201, 21);
-            this.ChooseType.TabIndex = 50;
+            this.ChooseType.TabIndex = 1;
             this.ChooseType.Visible = false;
             // 
             // CreateButton
@@ -619,23 +621,33 @@ namespace ЛабРаб7
             this.CreateButton.Location = new System.Drawing.Point(20, 375);
             this.CreateButton.Name = "CreateButton";
             this.CreateButton.Size = new System.Drawing.Size(175, 45);
-            this.CreateButton.TabIndex = 43;
+            this.CreateButton.TabIndex = 5;
             this.CreateButton.Text = "Создать";
             this.CreateButton.UseVisualStyleBackColor = false;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
+            // 
+            // ContactsArea
+            // 
+            this.ContactsArea.BackColor = System.Drawing.SystemColors.Control;
+            this.ContactsArea.Controls.Add(this.AddPhone);
+            this.ContactsArea.Controls.Add(this.Телефоны_);
+            this.ContactsArea.Controls.Add(this.ModelType);
+            this.ContactsArea.Controls.Add(this.NumberType);
+            this.ContactsArea.Controls.Add(this.AddedPhoneList);
+            this.ContactsArea.Location = new System.Drawing.Point(12, 9);
+            this.ContactsArea.Name = "ContactsArea";
+            this.ContactsArea.Size = new System.Drawing.Size(225, 441);
+            this.ContactsArea.TabIndex = 5;
+            this.ContactsArea.TabStop = false;
             // 
             // MyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 462);
-            this.Controls.Add(this.CreationMenu);
             this.Controls.Add(this.Interface);
-            this.Controls.Add(this.AddPhone);
-            this.Controls.Add(this.Телефоны_);
-            this.Controls.Add(this.ModelType);
-            this.Controls.Add(this.NumberType);
-            this.Controls.Add(this.AddedPhoneList);
+            this.Controls.Add(this.CreationMenu);
+            this.Controls.Add(this.ContactsArea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -657,8 +669,9 @@ namespace ЛабРаб7
             this.simMenu.PerformLayout();
             this.CreationMenu.ResumeLayout(false);
             this.CreationMenu.PerformLayout();
+            this.ContactsArea.ResumeLayout(false);
+            this.ContactsArea.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         #endregion
@@ -708,6 +721,7 @@ namespace ЛабРаб7
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private GroupBox ContactsArea;
     }
 }
 

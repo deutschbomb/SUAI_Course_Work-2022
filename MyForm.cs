@@ -177,8 +177,8 @@ namespace ЛабРаб7
                 CreationMenu.Hide();
                 this.ClientSize = new System.Drawing.Size(434, 462);
                 Interface.Show();
-                this.Controls.Add(this.Введите_модель_телефона_);
-                this.Controls.Add(this.Введите_номер_телефона_);
+                this.ContactsArea.Controls.Add(this.Введите_модель_телефона_);
+                this.ContactsArea.Controls.Add(this.Введите_номер_телефона_);
                 this.Введите_модель_телефона_.Location = new System.Drawing.Point(12, 9);
                 this.Введите_номер_телефона_.Location = new System.Drawing.Point(12, 57);
                 Console.WriteLine($"{System.IO.Directory.GetCurrentDirectory()}");
