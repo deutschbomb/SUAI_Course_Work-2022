@@ -21,7 +21,6 @@ namespace Phones_Base
             }
         }
         public abstract string Number { get; set; }
-        public string OutCall_Number { get; set; }
 
         public Phone() { }
         public Phone(string Name)
