@@ -8,7 +8,7 @@ namespace Phones_Base
 {
     interface IMessages
     {
-        void Send_Message(ref Phone phone, string message);
+        bool Send_Message(ref Phone phone, string message);
         string Check_Message(List<string> Messages);
     }
 }

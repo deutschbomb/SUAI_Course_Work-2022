@@ -30,7 +30,7 @@ namespace Phones_Base
         public bool Make_Call (ref Phone phone)
         {
             if (this.Call == true)
-                Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Текущий вызов не завершён."));
+                Notify?.Invoke(this, new NotificationEventArgs("Текущий вызов не завершён."));
             else
             {
                 if (phone.Number == this.Number)

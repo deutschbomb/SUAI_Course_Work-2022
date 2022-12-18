@@ -37,7 +37,7 @@ namespace Phones_Base
             else
             {
                 if (this.Call == true)
-                    Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Текущий вызов не завершён."));
+                    Notify?.Invoke(this, new NotificationEventArgs("Текущий вызов не завершён."));
                 else            
                     {
                     if (phone.Number == this.Number)
@@ -73,7 +73,7 @@ namespace Phones_Base
                 return false;
             }
         }
-        public void Send_Message(ref Phone phone_, string message)
+        public bool Send_Message(ref Phone phone_, string message)
         {
             if (this.Balance <= 0)
                 Notify?.Invoke(this, new NotificationEventArgs("Недостаточно средств для отправки сообщения.\n" +
@@ -86,10 +86,12 @@ namespace Phones_Base
                     phone.Messages.Add($" {this.Number}:\n  {message}");
                     this.Balance -= 5;
                     Notify?.Invoke(this, new NotificationEventArgs(phone.ToString(), "Сообщение успешно отправлено."));
+                    return true;
                 }
                 else Notify?.Invoke(this, new NotificationEventArgs(phone_.ToString(),
                     "На данный номер невозможно отправить сообщение."));
             }
+            return false;
         }
         public string Check_Message(List<string> Messages)
         {

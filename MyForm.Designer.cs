@@ -41,18 +41,11 @@ namespace ЛабРаб7
             this.NumberType = new System.Windows.Forms.TextBox();
             this.AddedPhoneList = new System.Windows.Forms.ListBox();
             this.Interface = new System.Windows.Forms.GroupBox();
-            this.BalanceButton = new System.Windows.Forms.Button();
+            this.simButton = new System.Windows.Forms.Button();
             this.SystemButton = new System.Windows.Forms.Button();
             this.PhotoButton = new System.Windows.Forms.Button();
             this.MessageButton = new System.Windows.Forms.Button();
             this.CallButton = new System.Windows.Forms.Button();
-            this.PhotoMenu = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SystemMenu = new System.Windows.Forms.GroupBox();
-            this.Информация_о_системе_ = new System.Windows.Forms.Label();
-            this.SystemInfo = new System.Windows.Forms.RichTextBox();
             this.MessageMenu = new System.Windows.Forms.GroupBox();
             this.SendButton = new System.Windows.Forms.Button();
             this.Message = new System.Windows.Forms.TextBox();
@@ -68,6 +61,13 @@ namespace ЛабРаб7
             this.InfoButton = new System.Windows.Forms.Button();
             this.DepositButton = new System.Windows.Forms.Button();
             this.DepositType = new System.Windows.Forms.MaskedTextBox();
+            this.PhotoMenu = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SystemMenu = new System.Windows.Forms.GroupBox();
+            this.Информация_о_системе_ = new System.Windows.Forms.Label();
+            this.SystemInfo = new System.Windows.Forms.RichTextBox();
             this.userBalance = new System.Windows.Forms.MaskedTextBox();
             this.userNumber = new System.Windows.Forms.TextBox();
             this.Введите_модель_телефона_ = new System.Windows.Forms.Label();
@@ -78,14 +78,14 @@ namespace ЛабРаб7
             this.ChooseType = new System.Windows.Forms.ComboBox();
             this.CreateButton = new System.Windows.Forms.Button();
             this.Interface.SuspendLayout();
+            this.MessageMenu.SuspendLayout();
+            this.CallMenu.SuspendLayout();
+            this.simMenu.SuspendLayout();
             this.PhotoMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SystemMenu.SuspendLayout();
-            this.MessageMenu.SuspendLayout();
-            this.CallMenu.SuspendLayout();
-            this.simMenu.SuspendLayout();
             this.CreationMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,13 +101,14 @@ namespace ЛабРаб7
             // 
             // AddPhone
             // 
+            this.AddPhone.BackColor = System.Drawing.Color.AliceBlue;
             this.AddPhone.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddPhone.Location = new System.Drawing.Point(27, 114);
             this.AddPhone.Name = "AddPhone";
             this.AddPhone.Size = new System.Drawing.Size(178, 44);
             this.AddPhone.TabIndex = 43;
             this.AddPhone.Text = "Добавить";
-            this.AddPhone.UseVisualStyleBackColor = true;
+            this.AddPhone.UseVisualStyleBackColor = false;
             this.AddPhone.Click += new System.EventHandler(this.AddPhone_Click);
             // 
             // ModelShow
@@ -180,16 +181,16 @@ namespace ЛабРаб7
             // 
             // Interface
             // 
-            this.Interface.Controls.Add(this.BalanceButton);
+            this.Interface.Controls.Add(this.simButton);
             this.Interface.Controls.Add(this.SystemButton);
             this.Interface.Controls.Add(this.PhotoButton);
             this.Interface.Controls.Add(this.MessageButton);
             this.Interface.Controls.Add(this.CallButton);
-            this.Interface.Controls.Add(this.simMenu);
             this.Interface.Controls.Add(this.PhotoMenu);
             this.Interface.Controls.Add(this.SystemMenu);
             this.Interface.Controls.Add(this.MessageMenu);
             this.Interface.Controls.Add(this.CallMenu);
+            this.Interface.Controls.Add(this.simMenu);
             this.Interface.Location = new System.Drawing.Point(228, 9);
             this.Interface.Name = "Interface";
             this.Interface.Size = new System.Drawing.Size(444, 441);
@@ -197,143 +198,65 @@ namespace ЛабРаб7
             this.Interface.TabStop = false;
             this.Interface.Text = "Интерфейс";
             // 
-            // BalanceButton
+            // simButton
             // 
-            this.BalanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BalanceButton.Location = new System.Drawing.Point(15, 375);
-            this.BalanceButton.Name = "BalanceButton";
-            this.BalanceButton.Size = new System.Drawing.Size(175, 45);
-            this.BalanceButton.TabIndex = 43;
-            this.BalanceButton.Text = "О СИМ-карте:";
-            this.BalanceButton.UseVisualStyleBackColor = true;
-            this.BalanceButton.Click += new System.EventHandler(this.BalanceButton_Click);
+            this.simButton.BackColor = System.Drawing.Color.Ivory;
+            this.simButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simButton.Location = new System.Drawing.Point(15, 375);
+            this.simButton.Name = "simButton";
+            this.simButton.Size = new System.Drawing.Size(175, 45);
+            this.simButton.TabIndex = 43;
+            this.simButton.Text = "О СИМ-карте:";
+            this.simButton.UseVisualStyleBackColor = false;
+            this.simButton.Click += new System.EventHandler(this.BalanceButton_Click);
             // 
             // SystemButton
             // 
+            this.SystemButton.BackColor = System.Drawing.Color.Ivory;
             this.SystemButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SystemButton.Location = new System.Drawing.Point(15, 194);
             this.SystemButton.Name = "SystemButton";
             this.SystemButton.Size = new System.Drawing.Size(175, 45);
             this.SystemButton.TabIndex = 43;
             this.SystemButton.Text = "Система";
-            this.SystemButton.UseVisualStyleBackColor = true;
+            this.SystemButton.UseVisualStyleBackColor = false;
             this.SystemButton.Click += new System.EventHandler(this.SystemButton_Click);
             // 
             // PhotoButton
             // 
+            this.PhotoButton.BackColor = System.Drawing.Color.AliceBlue;
             this.PhotoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PhotoButton.Location = new System.Drawing.Point(15, 140);
             this.PhotoButton.Name = "PhotoButton";
             this.PhotoButton.Size = new System.Drawing.Size(175, 45);
             this.PhotoButton.TabIndex = 43;
             this.PhotoButton.Text = "Фотографии";
-            this.PhotoButton.UseVisualStyleBackColor = true;
+            this.PhotoButton.UseVisualStyleBackColor = false;
             this.PhotoButton.Click += new System.EventHandler(this.PhotoButton_Click);
             // 
             // MessageButton
             // 
+            this.MessageButton.BackColor = System.Drawing.Color.Honeydew;
             this.MessageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MessageButton.Location = new System.Drawing.Point(15, 86);
             this.MessageButton.Name = "MessageButton";
             this.MessageButton.Size = new System.Drawing.Size(175, 45);
             this.MessageButton.TabIndex = 43;
             this.MessageButton.Text = "Сообщение";
-            this.MessageButton.UseVisualStyleBackColor = true;
+            this.MessageButton.UseVisualStyleBackColor = false;
             this.MessageButton.Click += new System.EventHandler(this.MessageButton_Click);
             // 
             // CallButton
             // 
+            this.CallButton.BackColor = System.Drawing.Color.Honeydew;
             this.CallButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CallButton.Location = new System.Drawing.Point(15, 32);
             this.CallButton.Name = "CallButton";
             this.CallButton.Size = new System.Drawing.Size(175, 45);
             this.CallButton.TabIndex = 43;
             this.CallButton.Text = "Звонок";
-            this.CallButton.UseVisualStyleBackColor = true;
+            this.CallButton.UseVisualStyleBackColor = false;
             this.CallButton.Click += new System.EventHandler(this.CallButton_Click);
-            // 
-            // PhotoMenu
-            // 
-            this.PhotoMenu.Controls.Add(this.pictureBox3);
-            this.PhotoMenu.Controls.Add(this.pictureBox2);
-            this.PhotoMenu.Controls.Add(this.pictureBox1);
-            this.PhotoMenu.Location = new System.Drawing.Point(205, 19);
-            this.PhotoMenu.Name = "PhotoMenu";
-            this.PhotoMenu.Size = new System.Drawing.Size(232, 416);
-            this.PhotoMenu.TabIndex = 53;
-            this.PhotoMenu.TabStop = false;
-            this.PhotoMenu.Text = "Фотографии";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::ЛабРаб7.Properties.Resources.Tulips;
-            this.pictureBox3.Location = new System.Drawing.Point(18, 283);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(198, 118);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::ЛабРаб7.Properties.Resources.Penguins;
-            this.pictureBox2.Location = new System.Drawing.Point(18, 156);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(198, 118);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ЛабРаб7.Properties.Resources.Hydrangeas;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(198, 118);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // SystemMenu
-            // 
-            this.SystemMenu.Controls.Add(this.Информация_о_системе_);
-            this.SystemMenu.Controls.Add(this.SystemInfo);
-            this.SystemMenu.Location = new System.Drawing.Point(205, 19);
-            this.SystemMenu.Name = "SystemMenu";
-            this.SystemMenu.Size = new System.Drawing.Size(232, 416);
-            this.SystemMenu.TabIndex = 52;
-            this.SystemMenu.TabStop = false;
-            this.SystemMenu.Text = "Система";
-            // 
-            // Информация_о_системе_
-            // 
-            this.Информация_о_системе_.AutoSize = true;
-            this.Информация_о_системе_.Location = new System.Drawing.Point(12, 24);
-            this.Информация_о_системе_.Name = "Информация_о_системе_";
-            this.Информация_о_системе_.Size = new System.Drawing.Size(131, 13);
-            this.Информация_о_системе_.TabIndex = 45;
-            this.Информация_о_системе_.Text = "Информация о системе:";
-            // 
-            // SystemInfo
-            // 
-            this.SystemInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SystemInfo.Location = new System.Drawing.Point(7, 40);
-            this.SystemInfo.Name = "SystemInfo";
-            this.SystemInfo.ReadOnly = true;
-            this.SystemInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.SystemInfo.Size = new System.Drawing.Size(219, 370);
-            this.SystemInfo.TabIndex = 0;
-            this.SystemInfo.Text = "";
             // 
             // MessageMenu
             // 
@@ -350,12 +273,13 @@ namespace ЛабРаб7
             // 
             // SendButton
             // 
+            this.SendButton.BackColor = System.Drawing.Color.Honeydew;
             this.SendButton.Location = new System.Drawing.Point(27, 53);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(176, 43);
             this.SendButton.TabIndex = 2;
             this.SendButton.Text = "Отправить";
-            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.UseVisualStyleBackColor = false;
             this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
             // 
             // Message
@@ -474,24 +398,26 @@ namespace ЛабРаб7
             // 
             // InfoButton
             // 
+            this.InfoButton.BackColor = System.Drawing.Color.Ivory;
             this.InfoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InfoButton.Location = new System.Drawing.Point(113, 71);
             this.InfoButton.Name = "InfoButton";
             this.InfoButton.Size = new System.Drawing.Size(92, 45);
             this.InfoButton.TabIndex = 43;
             this.InfoButton.Text = "Информация";
-            this.InfoButton.UseVisualStyleBackColor = true;
+            this.InfoButton.UseVisualStyleBackColor = false;
             this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
             // 
             // DepositButton
             // 
+            this.DepositButton.BackColor = System.Drawing.Color.GhostWhite;
             this.DepositButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DepositButton.Location = new System.Drawing.Point(15, 71);
             this.DepositButton.Name = "DepositButton";
             this.DepositButton.Size = new System.Drawing.Size(92, 45);
             this.DepositButton.TabIndex = 43;
             this.DepositButton.Text = "Пополнить";
-            this.DepositButton.UseVisualStyleBackColor = true;
+            this.DepositButton.UseVisualStyleBackColor = false;
             this.DepositButton.Click += new System.EventHandler(this.DepositButton_Click);
             // 
             // DepositType
@@ -504,6 +430,92 @@ namespace ЛабРаб7
             this.DepositType.Size = new System.Drawing.Size(201, 20);
             this.DepositType.TabIndex = 52;
             this.DepositType.Enter += new System.EventHandler(this.DepositType_Enter);
+            // 
+            // PhotoMenu
+            // 
+            this.PhotoMenu.Controls.Add(this.pictureBox3);
+            this.PhotoMenu.Controls.Add(this.pictureBox2);
+            this.PhotoMenu.Controls.Add(this.pictureBox1);
+            this.PhotoMenu.Location = new System.Drawing.Point(205, 19);
+            this.PhotoMenu.Name = "PhotoMenu";
+            this.PhotoMenu.Size = new System.Drawing.Size(232, 416);
+            this.PhotoMenu.TabIndex = 53;
+            this.PhotoMenu.TabStop = false;
+            this.PhotoMenu.Text = "Фотографии";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::ЛабРаб7.Properties.Resources.Tulips;
+            this.pictureBox3.Location = new System.Drawing.Point(18, 283);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(198, 118);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::ЛабРаб7.Properties.Resources.Penguins;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 156);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(198, 118);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ЛабРаб7.Properties.Resources.Hydrangeas;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(198, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // SystemMenu
+            // 
+            this.SystemMenu.Controls.Add(this.Информация_о_системе_);
+            this.SystemMenu.Controls.Add(this.SystemInfo);
+            this.SystemMenu.Location = new System.Drawing.Point(205, 19);
+            this.SystemMenu.Name = "SystemMenu";
+            this.SystemMenu.Size = new System.Drawing.Size(232, 416);
+            this.SystemMenu.TabIndex = 52;
+            this.SystemMenu.TabStop = false;
+            this.SystemMenu.Text = "Система";
+            // 
+            // Информация_о_системе_
+            // 
+            this.Информация_о_системе_.AutoSize = true;
+            this.Информация_о_системе_.Location = new System.Drawing.Point(12, 24);
+            this.Информация_о_системе_.Name = "Информация_о_системе_";
+            this.Информация_о_системе_.Size = new System.Drawing.Size(131, 13);
+            this.Информация_о_системе_.TabIndex = 45;
+            this.Информация_о_системе_.Text = "Информация о системе:";
+            // 
+            // SystemInfo
+            // 
+            this.SystemInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SystemInfo.Location = new System.Drawing.Point(7, 40);
+            this.SystemInfo.Name = "SystemInfo";
+            this.SystemInfo.ReadOnly = true;
+            this.SystemInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.SystemInfo.Size = new System.Drawing.Size(219, 370);
+            this.SystemInfo.TabIndex = 0;
+            this.SystemInfo.Text = "";
             // 
             // userBalance
             // 
@@ -568,6 +580,7 @@ namespace ЛабРаб7
             // 
             // CreationMenu
             // 
+            this.CreationMenu.BackColor = System.Drawing.SystemColors.Control;
             this.CreationMenu.Controls.Add(this.ChooseType);
             this.CreationMenu.Controls.Add(this.userModel);
             this.CreationMenu.Controls.Add(this.Введите_номер_телефона_);
@@ -585,7 +598,10 @@ namespace ЛабРаб7
             // 
             // ChooseType
             // 
+            this.ChooseType.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ChooseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ChooseType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ChooseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ChooseType.FormattingEnabled = true;
             this.ChooseType.Items.AddRange(new object[] {
             "Стационарный",
@@ -594,17 +610,19 @@ namespace ЛабРаб7
             this.ChooseType.Name = "ChooseType";
             this.ChooseType.Size = new System.Drawing.Size(201, 21);
             this.ChooseType.TabIndex = 50;
-            this.ChooseType.SelectedValueChanged += new System.EventHandler(this.ChooseType_SelectedValueChanged);
+            this.ChooseType.Visible = false;
+            //this.ChooseType.SelectedValueChanged += new System.EventHandler(this.ChooseType_SelectedValueChanged);
             // 
             // CreateButton
             // 
+            this.CreateButton.BackColor = System.Drawing.Color.GhostWhite;
             this.CreateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CreateButton.Location = new System.Drawing.Point(20, 375);
             this.CreateButton.Name = "CreateButton";
             this.CreateButton.Size = new System.Drawing.Size(175, 45);
             this.CreateButton.TabIndex = 43;
             this.CreateButton.Text = "Создать";
-            this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.UseVisualStyleBackColor = false;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // MyForm
@@ -626,18 +644,18 @@ namespace ЛабРаб7
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MyForm_Load);
             this.Interface.ResumeLayout(false);
-            this.PhotoMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.SystemMenu.ResumeLayout(false);
-            this.SystemMenu.PerformLayout();
             this.MessageMenu.ResumeLayout(false);
             this.MessageMenu.PerformLayout();
             this.CallMenu.ResumeLayout(false);
             this.CallMenu.PerformLayout();
             this.simMenu.ResumeLayout(false);
             this.simMenu.PerformLayout();
+            this.PhotoMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.SystemMenu.ResumeLayout(false);
+            this.SystemMenu.PerformLayout();
             this.CreationMenu.ResumeLayout(false);
             this.CreationMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -677,7 +695,7 @@ namespace ЛабРаб7
         private RichTextBox SystemInfo;
         private ComboBox ChooseType;
         private Button CreateButton;
-        private Button BalanceButton;
+        private Button simButton;
         private Button SendButton;
         private TextBox Message;
         private GroupBox PhotoMenu;

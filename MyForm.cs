@@ -15,15 +15,13 @@ namespace ЛабРаб7
 {
     public partial class MyForm : Form
     {
-        Mobile userPhone; int SelectedPhone;
-        List<Phone> PhonesList = new List<Phone>{ new Landline("Paralitic 404", "331100"),
-            new Mobile("Cockia 1488", 100, "89003221337"), new Landline("Horny", "123456"),
-            new Mobile("Glory H01", 100, "89001137777") };
+        Mobile userPhone;
+        List<Phone> PhonesList = new List<Phone>{ new Landline("Paralitic 404", "936111"),
+            new Mobile("Cockia 1488", 100, "89130401337"), new Landline("iPhonk 69", "228322"),
+            new Mobile("Glory H01", 100, "89641017878") };
 
         OpenFileDialog openPhoto = new OpenFileDialog();
         Random random = new Random();
-        GraphicsPath GP = new GraphicsPath();
-
 
         public MyForm()
         {
@@ -33,19 +31,19 @@ namespace ЛабРаб7
         private void MyForm_Load(object sender, EventArgs e)
         {
             #region Дизайн кнопок
-            GP.AddEllipse(new Rectangle(5, 4, 71, 71));
-            AcceptButton.Region = new Region(GP);
-            DeniedButton.Region = new Region(GP);
+            GraphicsPath callButton = new GraphicsPath();
+            callButton.AddEllipse(new Rectangle(5, 4, 71, 71));
+            AcceptButton.Region = new Region(callButton);
+            DeniedButton.Region = new Region(callButton);
             #endregion
 
             CallMenu.Hide(); MessageMenu.Hide(); SystemMenu.Hide();
-            Введите_баланс_телефона_.Hide(); userBalance.Hide();
+            //Введите_баланс_телефона_.Hide(); userBalance.Hide();
             Interface.Hide();
             DeniedButton.Hide();
             this.ClientSize = new System.Drawing.Size(244, 462);
 
             ChooseType.SelectedIndex = 1;
-            userNumber.Text = "89237636150";
             AddedPhoneList.DataSource = null;
             AddedPhoneList.DataSource = PhonesList;
             AddedPhoneList.DisplayMember = "Number";
@@ -150,19 +148,19 @@ namespace ЛабРаб7
 
         #endregion
 
-        private void ChooseType_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (ChooseType.SelectedItem == "Стационарный")
-            {
-                Введите_баланс_телефона_.Hide(); userBalance.Hide();
+        //private void ChooseType_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    if (ChooseType.SelectedItem == "Стационарный")
+        //    {
+        //        Введите_баланс_телефона_.Hide(); userBalance.Hide();
 
-            }
-            if (ChooseType.SelectedItem == "Мобильный")
-            {
-                Введите_баланс_телефона_.Show(); userBalance.Show();
+        //    }
+        //    if (ChooseType.SelectedItem == "Мобильный")
+        //    {
+        //        Введите_баланс_телефона_.Show(); userBalance.Show();
 
-            }
-        }
+        //    }
+        //}
         private void CreateButton_Click(object sender, EventArgs e)
         {
             if (userBalance.Text.Substring(0, 3) != "   ")
@@ -228,7 +226,7 @@ namespace ЛабРаб7
         {
             userPhone.Notify += DisplayNotify;
                 Phone OutPhone = PhonesList[AddedPhoneList.SelectedIndex];
-                if (userPhone.Make_Call(ref OutPhone) == true) DeniedButton.Show();
+                if (userPhone.Make_Call(ref OutPhone)) DeniedButton.Show();
                 PhonesList[AddedPhoneList.SelectedIndex] = OutPhone;
             userPhone.Notify -= DisplayNotify;
         }
@@ -236,7 +234,7 @@ namespace ЛабРаб7
         {
             userPhone.Notify += DisplayNotify;
                 Phone OutPhone = PhonesList[AddedPhoneList.SelectedIndex];
-                if (userPhone.End_Call(ref OutPhone) == true) DeniedButton.Hide();
+                if (userPhone.End_Call(ref OutPhone)) DeniedButton.Hide();
                 PhonesList[AddedPhoneList.SelectedIndex] = OutPhone;
             userPhone.Notify -= DisplayNotify;
         }
@@ -261,9 +259,9 @@ namespace ЛабРаб7
             else
             {
                 userPhone.Notify += DisplayNotify;
-                Phone OutPhone = PhonesList[AddedPhoneList.SelectedIndex];
-                userPhone.Send_Message(ref OutPhone, Message.Text);
-                PhonesList[AddedPhoneList.SelectedIndex] = (Mobile)OutPhone;
+                    Phone OutPhone = PhonesList[AddedPhoneList.SelectedIndex];
+                    if (userPhone.Send_Message(ref OutPhone, Message.Text))
+                        PhonesList[AddedPhoneList.SelectedIndex] = (Mobile)OutPhone;
                 userPhone.Notify -= DisplayNotify;
             }
         }
@@ -313,7 +311,7 @@ namespace ЛабРаб7
             SystemMenu.Show();
 
             SystemInfo.Text = String.Format($" Модель телефона: {userPhone.Model}\n" +
-                $" Вместимость галереи: {Directory.EnumerateFiles(@"D:\SAVES\Лабораторные работы C#\Курсовая работа 2022\bin\Debug\phone\photos").Count()}\n" +
+                $" Вместимость фотографий: {Directory.EnumerateFiles(@"D:\SAVES\Лабораторные работы C#\Курсовая работа 2022\bin\Debug\phone\photos").Count()}\n" +
                 $" ");
         }
 
