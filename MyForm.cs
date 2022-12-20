@@ -278,7 +278,7 @@ namespace ЛабРаб7
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            openPhoto.InitialDirectory = @"D:\SAVES\Лабораторные работы C#\Курсовая работа 2022\bin\Debug\phone\photos";
+            openPhoto.InitialDirectory = $@"{System.IO.Directory.GetCurrentDirectory()}\phone\photos";
             if (openPhoto.ShowDialog() != DialogResult.Cancel)
             {
                 pictureBox1.Image = new Bitmap(openPhoto.FileName);
